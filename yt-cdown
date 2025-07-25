@@ -20,7 +20,7 @@ URL_CHANNEL="$1"
 VIDEO_LIST_CSV=list.csv
 
 #OUTPUT FORMAT like mp3,mp4,aac etc. See yt-dlp docummentation for details
-OUTPUT_FORMAT=aac
+OUTPUT_FORMAT=mp4
 
 #Set your navigator for cookies. Useful for download restricted/member videos. EG:firefox,chrome etc
 NAVIGATOR=firefox
