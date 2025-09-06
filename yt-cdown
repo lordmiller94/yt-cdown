@@ -3,8 +3,8 @@
 #This script try to download all youtube videos from any channel
 #Recommend: put this script in empty folder before run!!!!
 #Requiriments: yt-dlp;jq;ffmpeg;tr
-#Usage: script.sh YOUTUBE_CHANNEL_URL [FOLDER_NAME]
-#NOTE: The attribute FOLDER_NAME is optional. Use if you want to backup multiple_channels at once
+#Usage: yt-cdown YOUTUBE_CHANNEL_URL [FOLDER]
+#NOTE: The attribute [FOLDER] is optional. Use if you want to backup multiple channels at once
 #Tested on ubuntulinux based systems
 
 ####VARIABLES####
@@ -40,7 +40,6 @@ mv ${VIDEO_LIST_CSV}_tmp ${VIDEO_LIST_CSV}
 
 #Downloading videos
 yt-dlp --cookies-from-browser ${NAVIGATOR} -a ${VIDEO_LIST_CSV} -t ${OUTPUT_FORMAT} -o "%(upload_date>%Y)s/%(upload_date>%m)s/%(upload_date>%d)s/%(upload_date>%Y-%m-%d)s_%(epoch-3600>%H-%M-%S)s_%(title)s" --sleep-requests 1
-#yt-dlp --cookies-from-browser ${NAVIGATOR} -a ${VIDEO_LIST_CSV} -t ${OUTPUT_FORMAT} -o "%(upload_date>%Y-%m-%d)s_%(epoch-3600>%H-%M-%S)s_%(title)s" --sleep-requests 1
 
 #Removing temporary file list
 rm ${VIDEO_LIST_CSV}
