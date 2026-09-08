@@ -25,7 +25,7 @@ cd ${FOLDER}
 VIDEO_LIST_CSV=list.csv
 
 #OUTPUT FORMAT like mp3,mp4,aac etc. See yt-dlp docummentation for details
-OUTPUT_FORMAT=mp3
+OUTPUT_FORMAT=mp4
 
 #Set your navigator for cookies. Useful for download restricted/member videos. EG:firefox,chrome etc
 NAVIGATOR=firefox
