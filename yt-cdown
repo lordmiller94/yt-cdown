@@ -25,7 +25,7 @@ cd ${FOLDER}
 VIDEO_LIST_CSV=list.csv
 
 #OUTPUT FORMAT like mp3,mp4,aac etc. See yt-dlp docummentation for details
-OUTPUT_FORMAT=aac
+OUTPUT_FORMAT=mp3
 
 #Set your navigator for cookies. Useful for download restricted/member videos. EG:firefox,chrome etc
 NAVIGATOR=firefox
@@ -39,8 +39,9 @@ rm ${VIDEO_LIST_CSV}
 mv ${VIDEO_LIST_CSV}_tmp ${VIDEO_LIST_CSV}
 
 #Downloading videos
-yt-dlp --cookies-from-browser ${NAVIGATOR} -a ${VIDEO_LIST_CSV} -t ${OUTPUT_FORMAT} -o "%(upload_date>%Y)s/%(upload_date>%m)s/%(upload_date>%d)s/%(upload_date>%Y-%m-%d)s_%(epoch-3600>%H-%M-%S)s_%(title)s" --sleep-requests 1
+yt-dlp --download-archive "${FOLDER}.list" --cookies-from-browser ${NAVIGATOR} -a ${VIDEO_LIST_CSV} -t ${OUTPUT_FORMAT} -o "%(upload_date>%Y)s/%(upload_date>%m)s/%(upload_date>%d)s/%(upload_date>%Y-%m-%d)s_%(epoch-3600>%H-%M-%S)s_%(title)s" --sleep-requests 1
 
 #Removing temporary file list
 rm ${VIDEO_LIST_CSV}
+
 
